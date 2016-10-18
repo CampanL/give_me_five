@@ -1,5 +1,4 @@
-import logger from './logger';
+import {classe} from './index';
 
-document.write('Welcome to my application.');
-logger(); // yes
+classe.init(); // yes
 console.log('app loaded');

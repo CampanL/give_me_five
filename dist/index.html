@@ -8,30 +8,68 @@
 	</head>
 	<body>
 		<div class="constainer">
-			<div class="col-md-6 yolo">
+			<h1>GIVE ME FIVE</h1>
+			<div class="col-md-5 yolo">
 				<ul id="class">
-					<li>
-						<div class="col-md-3">
-							<img src="http://static9.cdn.ubi.com/resource/fr-FR/game/rainbow6/siege/Smoke_229453.png">
+					<li id="">
+						<div class="col-md-4">
+							<img src="">
 						</div>
-						<div class="col-md-3 text">
-							<p>Nom: Smoke</p>
-							<p>Prenom: ???</p>
-							<button>+1 présence</button>
-							<button>+1 retard</button>
-							<button>+1 absence</button>
+						<div class="col-md-4 text">
+							<p class="nom"></p>
+							<p class="prenom"></p>
+							<button>présence +10</button>
+							<button>retard -5</button>
+							<button>absence -10</button>
 						</div>
-						<div class="col-md-5 score">
-							<p>score: 420</p>
+						<div class="col-md-4 score">
+							<p>Score: </p>
+							<p class="point"></p>
 						</div>
 					</li>
 				</ul>
+				<button class="ajouter">
+					ajouter
+				</button>
 			</div>
-			<div class="col-md-6 yolo1">
+			<div class="col-md-5 yolo1">
 				<div class="col-md-12 yolo3">
-					
+					<ul class="on">
+						<li >
+							<div class="col-md-12">
+								<img src="img/default.jpg">
+							</div>
+							<div>
+								<div class="col-md-6 center">
+									<p class="nom"></p>
+								</div>
+								<div class="col-md-6 center">
+									<p class="prenom"></p>	
+								</div>
+							</div>
+							<div>
+								<div class="col-md-4 info-presence center">
+									<p>présence: </p><p id="nb-p"></p>
+								</div>
+								<div class="col-md-4 info-presence center">
+									<p>retard: </p><p id="nb-r"></p>
+								</div>
+								<div class="col-md-4 info-presence center">
+									<p>absence: </p><p id="nb-a"></p>
+								</div>
+							</div>
+							<div>
+								<div class="col-md-6 info-particip center">
+									<p>passage oral:</p><p id="nb-oral"></p>
+								</div>
+								<div class="col-md-6 info-particip center">
+									<p>Participation:</p><p id="nb-particip"></p>
+								</div>
+							</div>
+							<button id="modif">Modifier</button>
+						</li>
+					</ul>
 				</div>
-				
 			</div>
 		</div>
 		

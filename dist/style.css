@@ -1,12 +1,20 @@
+h1
+{
+	text-align: center
+}
+
 .yolo, .yolo1
 {
 	padding: 10px 60px 10px 60px;
-	height: 600px;
+	height: 750px;
+	margin: 20px 30px 0px 0px; 
+	border-radius: 20px;
 }
 .yolo
 {
 	background-color: blue;
 	overflow-y: auto;
+	margin-left: 130px;
 }
 .yolo1
 {
@@ -23,6 +31,7 @@
 	margin: 5px;
 	color: white;
 	font-size: 17px;
+	border-radius: 10px;
 }
 .text
 {
@@ -39,17 +48,59 @@
 }
 #class img
 {
-	margin-top: 20px;
+	margin: 20px;
 	max-width: 150px;
 }
 .score
 {
-	margin-top: 75px;
+	text-align: center;
+	margin-top: 65px;
 	font-size:30px;
 }
 .yolo3
 {
 	height: 98%;
-	background-color: yellow;
 	margin: 5px;
+}
+.ajouter
+{
+	height: 200px;
+	width: 95%;
+	margin-left: 5%;
+	border-radius: 10px;
+	background-color: red;
+	border-color: #800;
+	font-size: 25px;
+	color: #fff;
+}
+.on
+{
+	list-style: none;
+	font-size: 20px;
+	padding-right: 20px;
+}
+.on img
+{
+	margin: 5px 0px 15px 0px;
+	max-width: 300px;
+	margin-left: 25%;
+}
+.center
+{
+	text-align: center
+}
+.info-presence
+{
+	margin: 10px, 5px, 10px, 5px;
+	background-color: orange;
+}
+.info-particip
+{
+	margin: 20px 0px 15px 0px;
+	background-color: rgb(29,255, 0);
+}
+#modif
+{
+	border-radius: 5px;
+	background-color: 
 }
