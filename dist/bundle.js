@@ -72,7 +72,7 @@
 
 	var classe = {
 		init: function init() {
-			var eleve = [new _eleve2.default('Campan', 'Loan', 10), new _eleve2.default('Naon', 'Felix', 10), new _eleve2.default('Teboul', 'Clement', 10)];
+			var eleve = [new _eleve2.default('Campan', 'Loan', 10, 'https://avatars.slack-edge.com/2016-10-18/92775451776_be0301deeac276b996b0_512.png')];
 			_liste_eleve.liste_eleve.init(eleve);
 		}
 	};
@@ -89,7 +89,16 @@
 	});
 	var liste_eleve = {
 		eleves: [],
+		selected: null,
 
+		get_selected: function get_selected() {
+			return this.selected;
+		},
+
+		select_student: function select_student(eleve) {
+			this.selected = eleve;
+			$('#class li').removeClass('selected').eq(eleve.id).addClass('selected');
+		},
 		init: function init(eleves) {
 			this.eleves = eleves;
 
@@ -110,6 +119,21 @@
 				$('#' + i + ' .point').append(eleve.score);
 				$('#' + i + ' img').attr('src', eleve.image);
 			}
+			var self = this;
+			$('#class').on('click', 'li', function () {
+				var index = $('#class li').index(this);
+				self.select_student(self.eleves[index]);
+
+				$('#on img').attr('src', self.eleves[index].image);
+				$('#on .nom').append(self.eleves[index].nom);
+				$('#on .prenom').append(self.eleves[index].prenom);
+				$('#on .point').append(self.eleves[index].score);
+				$('#on #nb-p').append(self.eleves[index].present);
+				$('#on #nb-r').append(self.eleves[index].retard);
+				$('#on #nb-a').append(self.eleves[index].absent);
+				$('#on #nb-oral').append(self.eleves[index].oral);
+				$('#on #nb-particip').append(self.eleves[index].participation);
+			});
 		}
 	};
 
@@ -130,18 +154,26 @@
 	var Eleve =
 	/**
 	 * représente les différents élèves de la classe
-	 * @param  {string} nom     Nom de l'élève
-	 * @param  {string} prenom  Prenom de l'élève
-	 * @param  {number} score   Score de l'élève
-	 * @param  {string} image   Image de profil de l'élève
+	 * @param  {string} nom      Nom de l'élève
+	 * @param  {string} prenom   Prenom de l'élève
+	 * @param  {number} score    Score de l'élève
+	 * @param  {string} image    Image de profil de l'élève
+	 * @param  {number} present  nombre de fois présent
+	 * @param  {number} retard   nombre de fois en retard
+	 * @param  {number} absent   nombre de fois absent
 	 */
-	function Eleve(nom, prenom, score, image) {
+	function Eleve(nom, prenom, score, image, present, retard, absent, participation, oral) {
 		_classCallCheck(this, Eleve);
 
 		this.nom = nom;
 		this.prenom = prenom;
 		this.score = score;
 		this.image = image || "img/default.jpg";
+		this.present = present || 0;
+		this.retard = retard || 0;
+		this.absent = absent || 0;
+		this.participation = participation || 0;
+		this.oral = oral || 0;
 	};
 
 	exports.default = Eleve;

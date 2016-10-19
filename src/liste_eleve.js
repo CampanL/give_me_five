@@ -1,7 +1,20 @@
 let liste_eleve =
 {
 	eleves : [],
+	selected: null,
 
+	get_selected: function()
+	{
+		return this.selected
+	},
+
+	select_student: function(eleve)
+	{
+		this.selected = eleve;
+		$('#class li').removeClass('selected')
+						.eq(eleve.id)
+						.addClass('selected');
+	},
 	init: function(eleves)
 	{
 		this.eleves = eleves;
@@ -23,7 +36,23 @@ let liste_eleve =
 			$('#'+i+' .point').append(eleve.score);
 			$('#'+i+' img').attr('src', eleve.image);
 		}
+		var self = this
+		$('#class').on('click', 'li', function()
+		{
+			let index = $('#class li').index(this);
+			self.select_student(self.eleves[index]);
+			
+			$('#on img').attr('src', self.eleves[index].image);
+			$('#on .nom').append(self.eleves[index].nom);
+			$('#on .prenom').append(self.eleves[index].prenom);
+			$('#on .point').append(self.eleves[index].score);
+			$('#on #nb-p').append(self.eleves[index].present);
+			$('#on #nb-r').append(self.eleves[index].retard);
+			$('#on #nb-a').append(self.eleves[index].absent);
+			$('#on #nb-oral').append(self.eleves[index].oral);
+			$('#on #nb-particip').append(self.eleves[index].participation);
+		})
 	}
-}
+};
 
 export {liste_eleve}

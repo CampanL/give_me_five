@@ -1,33 +1,45 @@
-h1
+body
 {
-	text-align: center
+	background-image: url(img/background.jpg);
+	background-size: cover;
 }
 
+h1
+{
+	color: white;
+	text-align: center;
+	text-shadow: 2.5px 3px #888;
+}
 .yolo, .yolo1
 {
 	padding: 10px 60px 10px 60px;
 	height: 750px;
 	margin: 20px 30px 0px 0px; 
+	border: solid 5px #555;
 	border-radius: 20px;
 }
 .yolo
 {
-	background-color: blue;
+	background-color: rgba(0,0,255,0.5);
 	overflow-y: auto;
 	margin-left: 130px;
 }
 .yolo1
 {
-	background-color: green;
+	background-color: rgba(0,200,0,0.5);
 }
 #class
 {
 	list-style: none;
 }
+.selected
+{
+	background-color: #900 !important; 
+}
 #class li
 {
 	height: 200px;
-	background-color: red;
+	background-color: #f00	;
 	margin: 5px;
 	color: white;
 	font-size: 17px;
@@ -73,34 +85,50 @@ h1
 	font-size: 25px;
 	color: #fff;
 }
-.on
+#on p
 {
 	list-style: none;
 	font-size: 20px;
 	padding-right: 20px;
+	color: #bbb;
+	font-weight: bold;
 }
-.on img
+#on img
 {
 	margin: 5px 0px 15px 0px;
 	max-width: 300px;
-	margin-left: 25%;
+	margin-left: 22%;
 }
 .center
 {
-	text-align: center
+	text-align: center;
+}
+.point-selected
+{
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	text-shadow: 3px 3px #555;
 }
 .info-presence
 {
+	padding-top: 10px;
 	margin: 10px, 5px, 10px, 5px;
-	background-color: orange;
+	background-color: rgb(239, 47, 0);
 }
 .info-particip
 {
+	padding-top: 10px;
 	margin: 20px 0px 15px 0px;
-	background-color: rgb(29,255, 0);
+	background-color: rgb(29,200, 0);
+}
+.plus-moins
+{
+	width: 30px;
+	height: 30px;
+	margin-bottom: 10px;
 }
 #modif
 {
 	border-radius: 5px;
-	background-color: 
 }

@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>give me five</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="constainer">
@@ -18,12 +18,12 @@
 						<div class="col-md-4 text">
 							<p class="nom"></p>
 							<p class="prenom"></p>
-							<button>présence +10</button>
-							<button>retard -5</button>
-							<button>absence -10</button>
+							<button onclick="addp()">présence +10</button>
+							<button onclick="addr()">retard -5</button>
+							<button onclick="adda()">absence -10</button>
 						</div>
 						<div class="col-md-4 score">
-							<p>Score: </p>
+							<p>Points: </p>
 							<p class="point"></p>
 						</div>
 					</li>
@@ -34,7 +34,7 @@
 			</div>
 			<div class="col-md-5 yolo1">
 				<div class="col-md-12 yolo3">
-					<ul class="on">
+					<ul id="on">
 						<li >
 							<div class="col-md-12">
 								<img src="img/default.jpg">
@@ -46,6 +46,9 @@
 								<div class="col-md-6 center">
 									<p class="prenom"></p>	
 								</div>
+							</div>
+							<div class="point-selected center">
+								<p>score: </p><p class="point-selected point"></p>
 							</div>
 							<div>
 								<div class="col-md-4 info-presence center">
@@ -61,12 +64,16 @@
 							<div>
 								<div class="col-md-6 info-particip center">
 									<p>passage oral:</p><p id="nb-oral"></p>
+									<button class="plus-moins">+</button> <button class="plus-moins">-</button>
 								</div>
 								<div class="col-md-6 info-particip center">
 									<p>Participation:</p><p id="nb-particip"></p>
+									<button class="plus-moins">+</button> <button class="plus-moins">-</button>
 								</div>
 							</div>
-							<button id="modif">Modifier</button>
+							<div>
+								<button id="modif" onclick="edit">Modifier</button>
+							</div>
 						</li>
 					</ul>
 				</div>
