@@ -91,6 +91,8 @@
 		eleves: [],
 		selected: null,
 
+		dive: $('#on').children('li').detach(),
+
 		get_selected: function get_selected() {
 			return this.selected;
 		},
@@ -101,6 +103,8 @@
 		},
 		init: function init(eleves) {
 			this.eleves = eleves;
+			var on = this.dive.clone();
+			$('#on').append(on);
 
 			var $eleves = $('#class'),
 			    $one = $eleves.children('li').detach();
@@ -120,10 +124,12 @@
 				$('#' + i + ' img').attr('src', eleve.image);
 			}
 			var self = this;
-			$('#class').on('click', 'li', function () {
+			$('#class').on('mousedown', 'li', function () {
+				var two = liste_eleve.dive.clone();
+				$('#on li').empty();
+				$('#on').append(two);
 				var index = $('#class li').index(this);
 				self.select_student(self.eleves[index]);
-
 				$('#on img').attr('src', self.eleves[index].image);
 				$('#on .nom').append(self.eleves[index].nom);
 				$('#on .prenom').append(self.eleves[index].prenom);

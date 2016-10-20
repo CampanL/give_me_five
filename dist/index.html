@@ -18,9 +18,9 @@
 						<div class="col-md-4 text">
 							<p class="nom"></p>
 							<p class="prenom"></p>
-							<button onclick="addp()">présence +10</button>
-							<button onclick="addr()">retard -5</button>
-							<button onclick="adda()">absence -10</button>
+							<button id="addp">présence +10</button>
+							<button id="addr">retard -5</button>
+							<button id="adda">absence -10</button>
 						</div>
 						<div class="col-md-4 score">
 							<p>Points: </p>
@@ -34,7 +34,7 @@
 			</div>
 			<div class="col-md-5 yolo1">
 				<div class="col-md-12 yolo3">
-					<ul id="on">
+					<ul id="on" class="center">
 						<li >
 							<div class="col-md-12">
 								<img src="img/default.jpg">
@@ -64,15 +64,15 @@
 							<div>
 								<div class="col-md-6 info-particip center">
 									<p>passage oral:</p><p id="nb-oral"></p>
-									<button class="plus-moins">+</button> <button class="plus-moins">-</button>
+									<button class="plus-moins" id="oral-plus">+</button> <button class="plus-moins" id="oral-moins">-</button>
 								</div>
 								<div class="col-md-6 info-particip center">
 									<p>Participation:</p><p id="nb-particip"></p>
-									<button class="plus-moins">+</button> <button class="plus-moins">-</button>
+									<button class="plus-moins" id="part-plus">+</button> <button class="plus-moins" id="part-moins">-</button>
 								</div>
 							</div>
 							<div>
-								<button id="modif" onclick="edit">Modifier</button>
+								<button id="modif">Modifier</button>
 							</div>
 						</li>
 					</ul>

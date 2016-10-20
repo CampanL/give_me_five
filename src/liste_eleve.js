@@ -3,6 +3,8 @@ let liste_eleve =
 	eleves : [],
 	selected: null,
 
+	dive: $('#on').children('li').detach(),
+
 	get_selected: function()
 	{
 		return this.selected
@@ -18,6 +20,8 @@ let liste_eleve =
 	init: function(eleves)
 	{
 		this.eleves = eleves;
+		let on = this.dive.clone();
+		$('#on').append(on)
 
 		let $eleves = $('#class'),
 			$one = $eleves.children('li').detach();
@@ -37,11 +41,13 @@ let liste_eleve =
 			$('#'+i+' img').attr('src', eleve.image);
 		}
 		var self = this
-		$('#class').on('click', 'li', function()
+		$('#class').on('mousedown', 'li', function()
 		{
+			let two = liste_eleve.dive.clone();
+			$('#on li').empty();
+			$('#on').append(two);
 			let index = $('#class li').index(this);
 			self.select_student(self.eleves[index]);
-			
 			$('#on img').attr('src', self.eleves[index].image);
 			$('#on .nom').append(self.eleves[index].nom);
 			$('#on .prenom').append(self.eleves[index].prenom);

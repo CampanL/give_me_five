@@ -1,7 +1,6 @@
 body
 {
-	background-image: url(img/background.jpg);
-	background-size: cover;
+	background-color: #2B4450;
 }
 
 h1
@@ -13,20 +12,20 @@ h1
 .yolo, .yolo1
 {
 	padding: 10px 60px 10px 60px;
-	height: 750px;
+	height: 800px;
 	margin: 20px 30px 0px 0px; 
 	border: solid 5px #555;
 	border-radius: 20px;
 }
 .yolo
 {
-	background-color: rgba(0,0,255,0.5);
+	background-color: #497285;
 	overflow-y: auto;
 	margin-left: 130px;
 }
 .yolo1
 {
-	background-color: rgba(0,200,0,0.5);
+	background-color: #DFEBED;
 }
 #class
 {
@@ -34,12 +33,12 @@ h1
 }
 .selected
 {
-	background-color: #900 !important; 
+	background-color: #BC6129 !important; 
 }
 #class li
 {
 	height: 200px;
-	background-color: #f00	;
+	background-color: #F78536;
 	margin: 5px;
 	color: white;
 	font-size: 17px;
@@ -80,8 +79,8 @@ h1
 	width: 95%;
 	margin-left: 5%;
 	border-radius: 10px;
-	background-color: red;
-	border-color: #800;
+	background-color: #F78536;
+	border-color: #CE6D2D;
 	font-size: 25px;
 	color: #fff;
 }
@@ -90,14 +89,18 @@ h1
 	list-style: none;
 	font-size: 20px;
 	padding-right: 20px;
-	color: #bbb;
+	color: #000;
 	font-weight: bold;
+}
+#on
+{
+	list-style: none;
 }
 #on img
 {
 	margin: 5px 0px 15px 0px;
 	max-width: 300px;
-	margin-left: 22%;
+	border-radius: 100%;
 }
 .center
 {
@@ -107,8 +110,6 @@ h1
 {
 	font-size: 30px;
 	font-weight: bold;
-	color: white;
-	text-shadow: 3px 3px #555;
 }
 .info-presence
 {
@@ -130,5 +131,9 @@ h1
 }
 #modif
 {
+	font-size: 20px;
 	border-radius: 5px;
+	height: 40px;
+	background-color: #497285;
+	color: #fff;
 }
