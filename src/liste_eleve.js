@@ -22,6 +22,7 @@ let liste_eleve =
 		this.eleves = eleves;
 		let on = this.dive.clone();
 		$('#on').append(on)
+		$('#on li').empty();
 
 		let $eleves = $('#class'),
 			$one = $eleves.children('li').detach();
@@ -57,6 +58,60 @@ let liste_eleve =
 			$('#on #nb-a').append(self.eleves[index].absent);
 			$('#on #nb-oral').append(self.eleves[index].oral);
 			$('#on #nb-particip').append(self.eleves[index].participation);
+			self.bouton();
+		})
+	},
+	bouton: function(eleves)
+	{
+		$('#oral-plus').on('mousedown', function()
+		{
+			liste_eleve.get_selected().oral += 1;
+			liste_eleve.get_selected().score +=20;
+			$('#on .point').empty();
+			$('#on #nb-oral').empty();
+			$('#on .point').append(liste_eleve.get_selected().score);
+			$('#on #nb-oral').append(liste_eleve.get_selected().oral);
+			$('#'+liste_eleve.get_selected().id+' .point').empty();
+			$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+		})
+		$('#oral-moins').on('mousedown', function()
+		{
+			if (liste_eleve.get_selected().oral>0) 
+			{
+			liste_eleve.get_selected().oral -= 1;
+			liste_eleve.get_selected().score -=20;
+			$('#on .point').empty();
+			$('#on #nb-oral').empty();
+			$('#on .point').append(liste_eleve.get_selected().score);
+			$('#on #nb-oral').append(liste_eleve.get_selected().oral);
+			$('#'+liste_eleve.get_selected().id+' .point').empty();
+			$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+			}
+		})
+		$('#part-plus').on('mousedown', function()
+		{
+			liste_eleve.get_selected().participation += 1;
+			liste_eleve.get_selected().score +=15;
+			$('#on .point').empty();
+			$('#on #nb-particip').empty();
+			$('#on .point').append(liste_eleve.get_selected().score);
+			$('#on #nb-particip').append(liste_eleve.get_selected().participation);
+			$('#'+liste_eleve.get_selected().id+' .point').empty();
+			$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+		})
+		$('#part-moins').on('mousedown', function()
+		{
+			if (liste_eleve.get_selected().participation>0) 
+			{
+			liste_eleve.get_selected().participation -= 1;
+			liste_eleve.get_selected().score -=15;
+			$('#on .point').empty();
+			$('#on #nb-particip').empty();
+			$('#on .point').append(liste_eleve.get_selected().score);
+			$('#on #nb-particip').append(liste_eleve.get_selected().participation);
+			$('#'+liste_eleve.get_selected().id+' .point').empty();
+			$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+			}
 		})
 	}
 };

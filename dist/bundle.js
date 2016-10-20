@@ -46,13 +46,14 @@
 
 	'use strict';
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	_index.classe.init(); // yes
 	console.log('app loaded');
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62,9 +63,9 @@
 	});
 	exports.classe = undefined;
 
-	var _liste_eleve = __webpack_require__(2);
+	var _liste_eleve = __webpack_require__(3);
 
-	var _eleve = __webpack_require__(3);
+	var _eleve = __webpack_require__(4);
 
 	var _eleve2 = _interopRequireDefault(_eleve);
 
@@ -72,14 +73,14 @@
 
 	var classe = {
 		init: function init() {
-			var eleve = [new _eleve2.default('Campan', 'Loan', 10, 'https://avatars.slack-edge.com/2016-10-18/92775451776_be0301deeac276b996b0_512.png')];
+			var eleve = [new _eleve2.default('Campan', 'Loan', 10, 'https://avatars.slack-edge.com/2016-10-18/92775451776_be0301deeac276b996b0_512.png'), new _eleve2.default('Nahon', 'Felix', 10, 'https://avatars.slack-edge.com/2016-10-18/92775001280_26eaae08b2bcad50cf3a_512.jpg'), new _eleve2.default('Teboul', 'Clement', 10, 'https://avatars.slack-edge.com/2016-10-18/92730652738_61e3d620eaf3035cfa53_512.jpg')];
 			_liste_eleve.liste_eleve.init(eleve);
 		}
 	};
 	exports.classe = classe;
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -105,6 +106,7 @@
 			this.eleves = eleves;
 			var on = this.dive.clone();
 			$('#on').append(on);
+			$('#on li').empty();
 
 			var $eleves = $('#class'),
 			    $one = $eleves.children('li').detach();
@@ -139,6 +141,53 @@
 				$('#on #nb-a').append(self.eleves[index].absent);
 				$('#on #nb-oral').append(self.eleves[index].oral);
 				$('#on #nb-particip').append(self.eleves[index].participation);
+				self.bouton();
+			});
+		},
+		bouton: function bouton(eleves) {
+			$('#oral-plus').on('mousedown', function () {
+				liste_eleve.get_selected().oral += 1;
+				liste_eleve.get_selected().score += 20;
+				$('#on .point').empty();
+				$('#on #nb-oral').empty();
+				$('#on .point').append(liste_eleve.get_selected().score);
+				$('#on #nb-oral').append(liste_eleve.get_selected().oral);
+				$('#' + liste_eleve.get_selected().id + ' .point').empty();
+				$('#' + liste_eleve.get_selected().id + ' .point').append(liste_eleve.get_selected().score);
+			});
+			$('#oral-moins').on('mousedown', function () {
+				if (liste_eleve.get_selected().oral > 0) {
+					liste_eleve.get_selected().oral -= 1;
+					liste_eleve.get_selected().score -= 20;
+					$('#on .point').empty();
+					$('#on #nb-oral').empty();
+					$('#on .point').append(liste_eleve.get_selected().score);
+					$('#on #nb-oral').append(liste_eleve.get_selected().oral);
+					$('#' + liste_eleve.get_selected().id + ' .point').empty();
+					$('#' + liste_eleve.get_selected().id + ' .point').append(liste_eleve.get_selected().score);
+				}
+			});
+			$('#part-plus').on('mousedown', function () {
+				liste_eleve.get_selected().participation += 1;
+				liste_eleve.get_selected().score += 15;
+				$('#on .point').empty();
+				$('#on #nb-particip').empty();
+				$('#on .point').append(liste_eleve.get_selected().score);
+				$('#on #nb-particip').append(liste_eleve.get_selected().participation);
+				$('#' + liste_eleve.get_selected().id + ' .point').empty();
+				$('#' + liste_eleve.get_selected().id + ' .point').append(liste_eleve.get_selected().score);
+			});
+			$('#part-moins').on('mousedown', function () {
+				if (liste_eleve.get_selected().participation > 0) {
+					liste_eleve.get_selected().participation -= 1;
+					liste_eleve.get_selected().score -= 15;
+					$('#on .point').empty();
+					$('#on #nb-particip').empty();
+					$('#on .point').append(liste_eleve.get_selected().score);
+					$('#on #nb-particip').append(liste_eleve.get_selected().participation);
+					$('#' + liste_eleve.get_selected().id + ' .point').empty();
+					$('#' + liste_eleve.get_selected().id + ' .point').append(liste_eleve.get_selected().score);
+				}
 			});
 		}
 	};
@@ -146,7 +195,7 @@
 	exports.liste_eleve = liste_eleve;
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports) {
 
 	"use strict";
