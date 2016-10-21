@@ -10,13 +10,13 @@ export default class Eleve
 	 * @param  {number} retard   nombre de fois en retard
 	 * @param  {number} absent   nombre de fois absent
 	 */
-	constructor(nom, prenom, score, image, present, retard, absent, participation, oral)
+	constructor(nom, prenom, score, image, presense, retard, absent, participation, oral)
 	{
 		this.nom = nom;
 		this.prenom = prenom;
 		this.score = score;
 		this.image = image || "img/default.jpg";
-		this.present = present || 0;
+		this.presense = presense || 0;
 		this.retard = retard || 0;
 		this.absent = absent || 0;
 		this.participation = participation || 0;

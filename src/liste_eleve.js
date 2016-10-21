@@ -49,11 +49,11 @@ let liste_eleve =
 			$('#on').append(two);
 			let index = $('#class li').index(this);
 			self.select_student(self.eleves[index]);
-			$('#on img').attr('src', self.eleves[index].image);
+			$('#profil img').attr('src', self.eleves[index].image);
 			$('#on .nom').append(self.eleves[index].nom);
 			$('#on .prenom').append(self.eleves[index].prenom);
 			$('#on .point').append(self.eleves[index].score);
-			$('#on #nb-p').append(self.eleves[index].present);
+			$('#on #nb-p').append(self.eleves[index].presense);
 			$('#on #nb-r').append(self.eleves[index].retard);
 			$('#on #nb-a').append(self.eleves[index].absent);
 			$('#on #nb-oral').append(self.eleves[index].oral);
@@ -111,6 +111,87 @@ let liste_eleve =
 			$('#on #nb-particip').append(liste_eleve.get_selected().participation);
 			$('#'+liste_eleve.get_selected().id+' .point').empty();
 			$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+			}
+		})
+		$('#on #add-p').on('mousedown', function()
+		{
+			liste_eleve.get_selected().presense += 1;
+			liste_eleve.get_selected().score += 10;
+			$('#on .point').empty();
+			$('#on .point').append(liste_eleve.get_selected().score);
+			$('#on #nb-p').empty();
+			$('#on #nb-p').append(liste_eleve.get_selected().presense);
+			$('#'+liste_eleve.get_selected().id+' .point').empty();
+			$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+			$('#'+liste_eleve.get_selected().id+' .addp').css('background-color', '#333');
+		})
+		$('#on #add-r').on('mousedown', function()
+		{
+			liste_eleve.get_selected().retard += 1;
+			liste_eleve.get_selected().score -= 5;
+			$('#on .point').empty();
+			$('#on .point').append(liste_eleve.get_selected().score);
+			$('#on #nb-r').empty();
+			$('#on #nb-r').append(liste_eleve.get_selected().retard);
+			$('#'+liste_eleve.get_selected().id+' .point').empty();
+			$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+			$('#'+liste_eleve.get_selected().id+' .addr').css('background-color', '#333');
+		})
+		$('#on #add-a').on('mousedown', function()
+		{
+			liste_eleve.get_selected().absent += 1;
+			liste_eleve.get_selected().score -= 10;
+			$('#on .point').empty();
+			$('#on .point').append(liste_eleve.get_selected().score);
+			$('#on #nb-a').empty();
+			$('#on #nb-a').append(liste_eleve.get_selected().absent);
+			$('#'+liste_eleve.get_selected().id+' .point').empty();
+			$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+			$('#'+liste_eleve.get_selected().id+' .adda').css('background-color', '#333');
+		})
+		$('#on #cancel-p').on('mousedown', function()
+		{
+			if (liste_eleve.get_selected().presense>0)
+			{
+				liste_eleve.get_selected().presense -= 1;
+				liste_eleve.get_selected().score -= 10;
+				$('#on .point').empty();
+				$('#on .point').append(liste_eleve.get_selected().score);
+				$('#on #nb-p').empty();
+				$('#on #nb-p').append(liste_eleve.get_selected().presense);
+				$('#'+liste_eleve.get_selected().id+' .point').empty();
+				$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+				$('#'+liste_eleve.get_selected().id+' .addp').css('background-color', '#111');
+			}
+		})
+		$('#on #cancel-r').on('mousedown', function()
+		{
+			if (liste_eleve.get_selected().retard>0) 
+			{
+				liste_eleve.get_selected().retard -= 1;
+				liste_eleve.get_selected().score += 5;
+				$('#on .point').empty();
+				$('#on .point').append(liste_eleve.get_selected().score);
+				$('#on #nb-r').empty();
+				$('#on #nb-r').append(liste_eleve.get_selected().retard);
+				$('#'+liste_eleve.get_selected().id+' .point').empty();
+				$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+				$('#'+liste_eleve.get_selected().id+' .addr').css('background-color', '#111');
+			}
+		})	
+		$('#on #cancel-a').on('mousedown', function()
+		{
+			if (liste_eleve.get_selected().absent>0) 
+			{
+				liste_eleve.get_selected().absent -= 1;
+				liste_eleve.get_selected().score += 10;
+				$('#on .point').empty();
+				$('#on .point').append(liste_eleve.get_selected().score);
+				$('#on #nb-a').empty();
+				$('#on #nb-a').append(liste_eleve.get_selected().absent);
+				$('#'+liste_eleve.get_selected().id+' .point').empty();
+				$('#'+liste_eleve.get_selected().id+' .point').append(liste_eleve.get_selected().score);
+				$('#'+liste_eleve.get_selected().id+' .adda').css('background-color', '#111');
 			}
 		})
 	}

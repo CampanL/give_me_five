@@ -13,7 +13,6 @@ h1
 {
 	padding: 10px 60px 10px 60px;
 	height: 800px;
-	margin: 20px 30px 0px 0px; 
 	border: solid 5px #555;
 	border-radius: 20px;
 }
@@ -21,10 +20,10 @@ h1
 {
 	background-color: #497285;
 	overflow-y: auto;
-	margin-left: 130px;
 }
 .yolo1
 {
+	margin-left: 10px;
 	background-color: #DFEBED;
 }
 #class
@@ -48,8 +47,9 @@ h1
 {
 	padding: 15px 0px 0px 5px;
 }
-#class button
+.addp, .addr, .adda
 {
+	text-align: center;
 	display: block;
 	margin-top: 10px;
 	border-radius: 10px;
@@ -61,6 +61,7 @@ h1
 {
 	margin: 20px;
 	max-width: 150px;
+	width: 150px;
 }
 .score
 {
@@ -73,22 +74,10 @@ h1
 	height: 98%;
 	margin: 5px;
 }
-.ajouter
-{
-	height: 200px;
-	width: 95%;
-	margin-left: 5%;
-	border-radius: 10px;
-	background-color: #F78536;
-	border-color: #CE6D2D;
-	font-size: 25px;
-	color: #fff;
-}
 #on p
 {
 	list-style: none;
 	font-size: 20px;
-	padding-right: 20px;
 	color: #000;
 	font-weight: bold;
 }
@@ -96,15 +85,25 @@ h1
 {
 	list-style: none;
 }
-#on img
+#profil img
 {
 	margin: 5px 0px 15px 0px;
 	max-width: 300px;
+	width: 300px;
 	border-radius: 100%;
+}
+#on .nom, #on .prenom
+{
+	font-size: 35px;
 }
 .center
 {
 	text-align: center;
+}
+.small
+{
+	width: 20px;
+	margin-left: 20px;
 }
 .point-selected
 {
@@ -113,27 +112,33 @@ h1
 }
 .info-presence
 {
-	padding-top: 10px;
 	margin: 10px, 5px, 10px, 5px;
-	background-color: rgb(239, 47, 0);
+	background-color: #FF7921;
+	height: 100px;
+}
+.info-presence p
+{
+	padding-top:15px;
+}
+.info-presence img
+{
+	margin-top: 10px;
+	max-width: 35px;
+	border-radius: 100%;
+}
+.info-presence img:hover
+{
+	cursor: pointer;
 }
 .info-particip
 {
 	padding-top: 10px;
 	margin: 20px 0px 15px 0px;
-	background-color: rgb(29,200, 0);
+	background-color: #55A9B5;
 }
 .plus-moins
 {
 	width: 30px;
 	height: 30px;
 	margin-bottom: 10px;
-}
-#modif
-{
-	font-size: 20px;
-	border-radius: 5px;
-	height: 40px;
-	background-color: #497285;
-	color: #fff;
 }

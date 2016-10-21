@@ -9,7 +9,7 @@
 	<body>
 		<div class="constainer">
 			<h1>GIVE ME FIVE</h1>
-			<div class="col-md-5 yolo">
+			<div class="col-md-5 col-md-offset-1 yolo">
 				<ul id="class">
 					<li id="">
 						<div class="col-md-4">
@@ -18,9 +18,9 @@
 						<div class="col-md-4 text">
 							<p class="nom"></p>
 							<p class="prenom"></p>
-							<button id="addp">présence +10</button>
-							<button id="addr">retard -5</button>
-							<button id="adda">absence -10</button>
+							<p class="addp">présence +10</p>
+							<p class="addr">retard -5</p>
+							<p class="adda">absence -10</p>
 						</div>
 						<div class="col-md-4 score">
 							<p>Points: </p>
@@ -28,15 +28,12 @@
 						</div>
 					</li>
 				</ul>
-				<button class="ajouter">
-					ajouter
-				</button>
 			</div>
 			<div class="col-md-5 yolo1">
 				<div class="col-md-12 yolo3">
 					<ul id="on" class="center">
 						<li >
-							<div class="col-md-12">
+							<div class="col-md-12" id='profil'>
 								<img src="img/default.jpg">
 							</div>
 							<div>
@@ -52,27 +49,24 @@
 							</div>
 							<div>
 								<div class="col-md-4 info-presence center">
-									<p>présence: </p><p id="nb-p"></p>
+									<img src="img/tick.png" id="add-p"><img src="img/small-cross.png" class="small" id="cancel-p"><p id="nb-p"></p>
 								</div>
 								<div class="col-md-4 info-presence center">
-									<p>retard: </p><p id="nb-r"></p>
+									<img src="img/clock.png" id="add-r"><img src="img/small-cross.png" class="small" id="cancel-r"><p id="nb-r"></p>
 								</div>
 								<div class="col-md-4 info-presence center">
-									<p>absence: </p><p id="nb-a"></p>
-								</div>
+									<img src="img/cross.png" id="add-a"><img src="img/small-cross.png" class="small" id="cancel-a"><p id="nb-a"></p>
+								</div>	
 							</div>
 							<div>
 								<div class="col-md-6 info-particip center">
-									<p>passage oral:</p><p id="nb-oral"></p>
+									<p>passage au tableau:</p><p id="nb-oral"></p>
 									<button class="plus-moins" id="oral-plus"">+</button> <button class="plus-moins" id="oral-moins">-</button>
 								</div>
 								<div class="col-md-6 info-particip center">
 									<p>Participation:</p><p id="nb-particip"></p>
 									<button class="plus-moins" id="part-plus">+</button> <button class="plus-moins" id="part-moins">-</button>
 								</div>
-							</div>
-							<div>
-								<button id="modif">Modifier</button>
 							</div>
 						</li>
 					</ul>
