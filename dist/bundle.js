@@ -46,14 +46,13 @@
 
 	'use strict';
 
-	var _index = __webpack_require__(2);
+	var _index = __webpack_require__(1);
 
 	_index.classe.init(); // yes
 	console.log('app loaded');
 
 /***/ },
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63,9 +62,9 @@
 	});
 	exports.classe = undefined;
 
-	var _liste_eleve = __webpack_require__(3);
+	var _liste_eleve = __webpack_require__(2);
 
-	var _eleve = __webpack_require__(4);
+	var _eleve = __webpack_require__(3);
 
 	var _eleve2 = _interopRequireDefault(_eleve);
 
@@ -80,7 +79,7 @@
 	exports.classe = classe;
 
 /***/ },
-/* 3 */
+/* 2 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -88,6 +87,16 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	/////////////////////////////////////
+	/////////////////////////////////////
+	//// /!\ WARNING CANCER CODE /!\ ////
+	////   Attention ce code peut	 ////
+	////     ou va vous donner       ////
+	////     un cancer oculair       ////
+	/////////////////////////////////////
+	/////////////////////////////////////
+
+
 	var liste_eleve = {
 		eleves: [],
 		selected: null,
@@ -267,7 +276,7 @@
 	exports.liste_eleve = liste_eleve;
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports) {
 
 	"use strict";
